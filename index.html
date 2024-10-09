@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Euro 2024</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/en/thumb/2/26/UEFA_Euro_2024_Logo.svg/172px-UEFA_Euro_2024_Logo.svg.png?20240614164159"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+      header {
+        width: 960px;
+        height: 100px;
+        overflow: auto;
+        background-color: #186cff;
+      }
+      header ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 auto;
+        align-items: center;
+      }
+      header ul li {
+        list-style-type: none;
+      }
+      header ul li:hover {
+        transform: scale(1.2);
+        font-weight: bold;
+      }
+      header ul li a {
+        text-decoration: none;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+      }
+      header ul li img {
+        width: 50px;
+        height: 50px;
+      }
+      #main-text {
+        height: 200px;
+        background-color: #143cdb;
+        margin: 0 auto;
+      }
+      #main-text p {
+        text-decoration: none;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: justify;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .story {
+        background-color: #cac8b8;
+        margin: 0 auto;
+        height: 200px;
+      }
+      .story ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
+      .story ul li {
+        list-style-type: none;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        margin: 0 auto;
+      }
+      .story ul li a {
+        text-decoration: none;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50px;
+        text-align: center;
+      }
+      .story ul li img {
+        border-radius: 50px;
+        display: block;
+        width: 90px;
+        align-items: center;
+        border: 2px #f0d80d solid;
+      }
+
+      .story ul li:hover {
+        transform: scale(1.5);
+      }
+      .scorers {
+        background-color: #ececec;
+        height: 300px;
+        text-align: center;
+        width: 100%;
+        padding-top: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        font-family: "Afacad Flux", sans-serif;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 auto;
+        width: 60%;
+      }
+      caption {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        color: #333;
+        margin-bottom: 16px;
+      }
+      th {
+        background-color: #143cdb;
+        color: white;
+      }
+      .scorers td,
+      .scorers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      tbody tr:nth-child(2):hover {
+        background-image: url(data:image/png;base64,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);
+        background-size: auto 100%;
+        color: #143cdb;
+        font-weight: bold;
+        font-style: italic;
+      }
+      tbody tr:nth-child(3):hover {
+        background-image: url(https://cdn.britannica.com/97/897-050-0BFECDA5/Flag-Germany.jpg?w=400&h=300&c=crop);
+        background-size: auto 100%;
+        color: #143cdb;
+        font-weight: bold;
+        font-style: italic;
+      }
+      tbody tr:nth-child(4):hover {
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png);
+        background-size: auto 100%;
+        color: #143cdb;
+        font-weight: bold;
+        font-style: italic;
+      }
+      tbody tr:nth-child(5):hover {
+        background-image: url(data:image/png;base64,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);
+        background-size: auto 100%;
+        color: #143cdb;
+        font-weight: bold;
+        font-style: italic;
+      }
+      form {
+        border: 3px solid #f1f1f1;
+        font-family: Arial;
+      }
+
+      .container {
+        padding: 20px;
+        background-color: #f1f1f1;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      input[type="text"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      input[type="checkbox"] {
+        margin-top: 16px;
+      }
+
+      input[type="submit"] {
+        background-color: #143cdb;
+        color: white;
+        border: none;
+      }
+
+      input[type="submit"]:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>
+          <a href="#"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/2/26/UEFA_Euro_2024_Logo.svg/172px-UEFA_Euro_2024_Logo.svg.png?20240614164159"
+              alt="header image"
+          /></a>
+        </li>
+        <li><a href="#">Matches</a></li>
+        <li><a href="#">Groups</a></li>
+        <li><a href="#">Teams</a></li>
+        <li><a href="#">Stats</a></li>
+      </ul>
+    </header>
+    <main>
+      <div id="main-text">
+        <p>
+          The 2024 UEFA European Football Championship, commonly referred to as
+          UEFA Euro 2024 (stylised as UEFA EURO 2024) or simply Euro 2024, was
+          the 17th UEFA European Championship, the quadrennial international
+          football championship organised by UEFA for the European men's
+          national teams of their member associations. Germany hosted the
+          tournament, which took place from 14 June to 14 July 2024. The
+          tournament involved 24 teams, with Georgia making their European
+          Championship debut.
+        </p>
+      </div>
+      <div class="story">
+        <ul>
+          <li>
+            <a href="#">
+              <img
+                src="https://uefa.cdn.usestoryteller.com/assets/studio-templates/8b22668b-9715-1192-d183-3a13dc2015bd/17ddea0f-4715-4a04-89b9-4cef229319ff/46adf4b8-903d-1d06-f86d-3a13dc9b604b/IconRenderOutput.webp"
+                alt="moments"
+              />
+              Moments</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="https://uefa.cdn.usestoryteller.com/assets/studio-templates/08a912bc-e11c-9856-b02c-3a13dc20e4d3/c804d3fd-eb0d-4a8a-b9c7-5262b84bb2a5/2ec93db6-790c-c60e-d0ed-3a13dcbb2fd4/IconRenderOutput.webp"
+                alt="saves"
+              />
+              Saves</a
+            >
+          </li>
+
+          <li>
+            <a href="#">
+              <img
+                src="https://uefa.cdn.usestoryteller.com/assets/studio-templates/4644a564-5484-d400-d299-3a13fb7efef4/f9f5e804-9a25-40d4-9b16-6dc466a6d1bc/a61e36b0-b4ac-c44c-6da4-3a13fbf2e8ec/IconRenderOutput.webp"
+                alt="matches"
+              />
+              Matches</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="https://uefa.cdn.usestoryteller.com/assets/studio-templates/c4891df8-3971-eb86-0af9-3a13d81308e2/bddaae0d-1efb-405d-ac56-8301bc2e4e39/e64fe7f0-44ab-c294-3ed3-3a13d81ab8a1/IconRenderOutput.webp"
+                alt="goals"
+              />
+              Goals</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="scorers">
+        <table>
+          <caption>
+            Euro 2024 Top Scorers
+          </caption>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Goals</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mikautadze</td>
+            <td>3</td>
+            <td>Georgia</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Musiala</td>
+            <td>3</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Gapko</td>
+            <td>3</td>
+            <td>Netherlands</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Olmo</td>
+            <td>3</td>
+            <td>Spain</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <form>
+        <div class="container">
+          <h2>Subscribe to our Newsletter</h2>
+          <p>
+            When was it? Where was it? Who qualified? How did it work? All your
+            UEFA EURO 2024 questions answered.
+          </p>
+        </div>
+
+        <div class="container" style="background-color: white">
+          <input type="text" placeholder="Name" name="name" required />
+          <input type="text" placeholder="Email address" name="mail" required />
+          <label>
+            <input type="checkbox" checked="checked" name="subscribe" /> Daily
+            Newsletter
+          </label>
+        </div>
+
+        <div class="container">
+          <input type="submit" value="Subscribe" />
+        </div>
+      </form>
+    </footer>
+  </body>
+</html>
