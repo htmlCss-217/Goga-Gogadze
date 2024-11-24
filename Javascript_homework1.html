@@ -1,0 +1,20 @@
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        let userName = prompt("ჩაწერეთ თქვენი სახელი:");
+        let userSurname = prompt("ჩაწერეთ თქვენი გვარი:");
+        let userBornyear = prompt("რომელ წელს დაიბადეთ?");
+        let userLivingplace = prompt("რომელ ქალაქში ცხოვრობ?");
+        let yearNow = 2024;
+        userBornyear = Number(userBornyear);
+        shorteneduserLivingplace = userLivingplace.substr(0, (userLivingplace.length - 1))
+
+        alert(`გამარჯობა ${userName} ${userSurname}, მიხარია რომ უკვე ${(yearNow - userBornyear)} წლის ხარ და  ${shorteneduserLivingplace}ში ცხოვრობ!`);
+
+    </script>
+</body>
+
+</html>
